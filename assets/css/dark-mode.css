@@ -1,0 +1,98 @@
+/* ==========================================================================
+   GRITLINE AGGREGATES — Dark Mode Theme (dark-mode.css)
+   Swaps to quarry-black surfaces (--slate-900 / --slate-700) with warm sand text
+   ========================================================================== */
+
+[data-theme="dark"] {
+  --bg-primary:      #1B1D1F; /* --slate-900 quarry black */
+  --bg-secondary:    #232629; /* deep basalt layer */
+  --bg-tertiary:     #2D3236; /* crushed granite dark */
+  --bg-surface:      #262A2E; /* card surface */
+  --bg-surface-elev: #34393D; /* --slate-700 elevated surface */
+  --bg-glass:        rgba(27, 29, 31, 0.88);
+  --bg-dark-band:    #131516;
+
+  --text-primary:    #FBF6EC; /* --sand-50 bleached sand */
+  --text-secondary:  #EAD9B5; /* --sand-200 dune */
+  --text-muted:      #B8B2A6; /* WCAG 2.1 AA compliant warm stone on dark */
+  --text-on-dark:    #FBF6EC;
+  --text-on-accent:  #1B1D1F;
+
+  --border-subtle:   rgba(234, 217, 181, 0.14);
+  --border-strong:   rgba(234, 217, 181, 0.28);
+  --border-accent:   var(--ochre);
+
+  --shadow-sm:       0 4px 14px rgba(0, 0, 0, 0.35);
+  --shadow-md:       0 14px 36px rgba(0, 0, 0, 0.45);
+  --shadow-lg:       0 24px 52px rgba(0, 0, 0, 0.6);
+  --shadow-tilt:     0 28px 64px rgba(0, 0, 0, 0.72);
+}
+
+[data-theme="dark"] .eyebrow {
+  color: var(--ochre);
+  background: rgba(201, 138, 43, 0.16);
+  border-color: rgba(201, 138, 43, 0.4);
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--bg-surface);
+  border-color: var(--border-subtle);
+}
+
+[data-theme="dark"] .card:hover {
+  border-color: var(--ochre);
+}
+
+[data-theme="dark"] .card__glare {
+  background: radial-gradient(circle at 50% 50%, rgba(201, 138, 43, 0.22), transparent 65%);
+}
+
+[data-theme="dark"] .card__icon {
+  color: var(--ochre);
+  background: rgba(201, 138, 43, 0.15);
+  border-color: rgba(201, 138, 43, 0.38);
+}
+
+[data-theme="dark"] .card:hover .card__icon {
+  background: var(--ochre);
+  color: var(--slate-900);
+}
+
+[data-theme="dark"] .btn--secondary {
+  background-color: var(--sand-200);
+  color: var(--slate-900);
+  border-color: var(--sand-200);
+}
+
+[data-theme="dark"] .btn--secondary:hover {
+  background-color: var(--ochre);
+  border-color: var(--ochre);
+  color: var(--slate-900);
+}
+
+[data-theme="dark"] .form-control {
+  background-color: #16181A;
+  color: var(--sand-50);
+  border-color: var(--border-strong);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: var(--stone-500);
+}
+
+[data-theme="dark"] .photo-stack__frame {
+  border-color: var(--slate-700);
+}
+
+[data-theme="dark"] .spec-table thead {
+  background: #121416;
+  border-bottom: 2px solid var(--ochre);
+}
+
+@media (max-width: 767px) {
+  [data-theme="dark"] .spec-table tr {
+    background-color: var(--bg-surface);
+    border-color: var(--border-subtle);
+  }
+}
+

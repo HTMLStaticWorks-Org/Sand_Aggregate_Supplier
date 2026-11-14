@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRITLINE Aggregates — Technical Documentation &amp; Customization Guide</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../pages/index.html" class="brand-logo">
+        <span class="brand-logo__mark"><i data-lucide="mountain"></i></span>
+        <span>GRITLINE <span class="brand-logo__sub">Documentation v1.0</span></span>
+      </a>
+      <div class="header-actions">
+        <a href="../pages/index.html" class="btn btn--primary btn--sm">Open Live Website</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container" style="max-width: 960px;">
+      <span class="eyebrow">Developer &amp; Agency Handover Manual</span>
+      <h1>GRITLINE Aggregates — Documentation</h1>
+      <p style="margin-top: 0.75rem; color: var(--text-secondary); font-size: 1.1rem;">
+        Complete guide to installing, customizing, and deploying the GRITLINE Aggregates multi-page static website.
+      </p>
+
+      <hr style="margin-block: 2.5rem; border: 0; border-top: 1px solid var(--border-strong);">
+
+      <h2>1. Installation &amp; Local Preview</h2>
+      <p style="margin-block: 0.75rem;">
+        This website is built with pure semantic HTML5, CSS3 custom properties, and native ES6 JavaScript modules—requiring zero npm dependencies or build steps. Serve the root folder with any static web server (`python -m http.server 8080` or VS Code Live Server) and open `/index.html` or `/pages/index.html`.
+      </p>
+
+      <h2 style="margin-top: 2rem;">2. Customizing Earth-and-Quarry Colour Variables</h2>
+      <p style="margin-block: 0.75rem;">
+        Open <code>assets/css/style.css</code> (lines 11–26) to adjust the core palette:
+      </p>
+      <pre style="background: var(--slate-900); color: var(--sand-50); padding: 1.25rem; border-radius: var(--radius-md); overflow-x: auto; font-family: var(--font-mono); font-size: 0.85rem;">
+:root {
+  --sand-50:   #FBF6EC;  /* bleached sand (light bg) */
+  --sand-200:  #EAD9B5;  /* dune */
+  --sand-400:  #D2B07A;  /* river sand */
+  --ochre:     #C98A2B;  /* primary accent / CTAs */
+  --rust:      #B5532A;  /* secondary accent, hovers */
+  --slate-900: #1B1D1F;  /* quarry black (dark bg) */
+  --slate-700: #34393D;  /* crushed granite */
+  --stone-500: #8A8F8A;  /* gravel grey */
+  --moss:      #4F6B4A;  /* subtle success/eco accent */
+}</pre>
+
+      <h2 style="margin-top: 2rem;">3. Customizing Fonts, Rates &amp; Contact Information</h2>
+      <p style="margin-block: 0.75rem;">
+        • <strong>Fonts:</strong> Declare self-hosted WOFF2 files in <code>assets/fonts/fonts.css</code> or update the Google Fonts link in the <code>&lt;head&gt;</code> of each page.<br>
+        • <strong>Calculator Densities &amp; Bulk Rates:</strong> Edit the <code>data-density</code> and <code>data-rate</code> attributes on <code>#calc-material</code> in <code>pages/products.html</code>.<br>
+        • <strong>Delivery Zones:</strong> Update the <code>ZONES</code> dictionary in <code>assets/js/main.js</code> (`initDeliveryZoneSelector`).
+      </p>
+
+      <h2 style="margin-top: 2rem;">4. Integration Placeholders Summary</h2>
+      <p style="margin-block: 0.75rem;">
+        Search for <code>TODO: customize</code> across the codebase to configure:<br>
+        1. <strong>Formspree / Netlify Forms:</strong> <code>pages/contact.html</code> (`#quote-request-form`)<br>
+        2. <strong>Mailchimp / ConvertKit Newsletter:</strong> Footer across all pages &amp; <code>pages/coming-soon.html</code><br>
+        3. <strong>Interactive Quarry Map:</strong> <code>pages/contact.html</code> (`&lt;iframe&gt;`)<br>
+        4. <strong>Stripe / UPI Booking Advance Link:</strong> <code>pages/contact.html</code> (`#advance-payment-info`)
+      </p>
+
+      <h2 style="margin-top: 2rem;">5. Credits &amp; Support</h2>
+      <p style="margin-block: 0.75rem;">
+        • Typography: Bricolage Grotesque, DM Sans, and JetBrains Mono.<br>
+        • Icons: Bundled Lucide SVG vector paths (`assets/js/plugins/icons.js`).<br>
+        • Support: Refer to `README.md` in the project root for full file-by-file inventory and changelog.
+      </p>
+    </div>
+  </main>
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>
+

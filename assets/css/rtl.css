@@ -1,0 +1,79 @@
+/* ==========================================================================
+   GRITLINE AGGREGATES — Right-to-Left Support Stylesheet (rtl.css)
+   Activated when <html dir="rtl"> is toggled via header control or persisted
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* STRICT RULE: All cards keep center alignment in both LTR and RTL at all breakpoints */
+[dir="rtl"] .card,
+[dir="rtl"] .card *,
+[dir="rtl"] .section-header,
+[dir="rtl"] .stat-item {
+  text-align: center;
+}
+
+/* Flip directional arrows in buttons, breadcrumbs, and timelines */
+[dir="rtl"] .btn svg.icon-arrow,
+[dir="rtl"] .breadcrumb svg {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .btn:hover svg.icon-arrow {
+  transform: scaleX(-1) translateX(3px);
+}
+
+/* Mobile drawer slides from left in RTL */
+[dir="rtl"] .mobile-drawer {
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .mobile-drawer.is-open {
+  transform: translateX(0);
+}
+
+/* Marquee animation reversal in RTL */
+[dir="rtl"] .material-marquee__track {
+  animation-name: marqueeScrollRTL;
+}
+
+@keyframes marqueeScrollRTL {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+/* Photo Stack tilt mirroring in RTL */
+[dir="rtl"] .photo-stack__frame--1 {
+  transform: rotate(2.5deg) translateX(8px);
+}
+
+[dir="rtl"] .photo-stack__frame--2 {
+  transform: rotate(-2.2deg) translateX(-12px);
+}
+
+[dir="rtl"] .photo-stack__frame--3 {
+  transform: rotate(1.6deg) translateX(4px);
+}
+
+[dir="rtl"] .photo-stack__frame:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+/* Form controls & tables in RTL */
+[dir="rtl"] .accordion-trigger,
+[dir="rtl"] .spec-table {
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  [dir="rtl"] .spec-table td {
+    text-align: left;
+  }
+  [dir="rtl"] .spec-table td::before {
+    text-align: right;
+  }
+}
+
