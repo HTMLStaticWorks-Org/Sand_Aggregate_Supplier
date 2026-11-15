@@ -39,14 +39,13 @@ function initTheme() {
     localStorage.setItem(STORAGE_KEYS.THEME, theme);
     const toggleBtns = document.querySelectorAll('[data-theme-toggle]');
     toggleBtns.forEach((btn) => {
-      const label = btn.querySelector('.theme-btn-label');
-      if (label) {
-        label.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
-      }
       btn.setAttribute(
         'aria-label',
         theme === 'dark' ? 'Switch to light sand theme' : 'Switch to dark quarry theme'
       );
+      btn.innerHTML = theme === 'dark'
+        ? '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>'
+        : '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
     });
   };
 
@@ -114,19 +113,60 @@ function initNavigation() {
   onScroll();
 
   if (hamburgerBtn && mobileDrawer) {
-    hamburgerBtn.addEventListener('click', () => {
-      const isOpen = mobileDrawer.classList.toggle('is-open');
+    const updateMenuState = (isOpen) => {
+      mobileDrawer.classList.toggle('is-open', isOpen);
       hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+      hamburgerBtn.setAttribute('aria-label', isOpen ? 'Close Menu' : 'Open Menu');
+      hamburgerBtn.classList.toggle('is-active', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
+
+      // Swap between Lucide menu and close (X) SVG icons
+      if (isOpen) {
+        hamburgerBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+      } else {
+        hamburgerBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>';
+      }
+    };
+
+    hamburgerBtn.addEventListener('click', () => {
+      const willOpen = !mobileDrawer.classList.contains('is-open');
+      updateMenuState(willOpen);
     });
 
+    // Close when any navigation link inside drawer is clicked
+    mobileDrawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        updateMenuState(false);
+      });
+    });
+
+    // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileDrawer.classList.contains('is-open')) {
-        mobileDrawer.classList.remove('is-open');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        updateMenuState(false);
         hamburgerBtn.focus();
       }
+    });
+
+    // Auto-close if screen resized to desktop viewport
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && mobileDrawer.classList.contains('is-open')) {
+        updateMenuState(false);
+      }
+    }, { passive: true });
+
+    // Mobile drawer accordion toggle for submenus (e.g. Home)
+    const drawerToggles = mobileDrawer.querySelectorAll('.mobile-drawer__link--toggle');
+    drawerToggles.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isExpanded));
+        const subnav = btn.nextElementSibling;
+        if (subnav) {
+          subnav.classList.toggle('is-open', !isExpanded);
+        }
+      });
     });
   }
 
@@ -142,6 +182,42 @@ function initNavigation() {
         const open = item.classList.toggle('is-open');
         trigger.setAttribute('aria-expanded', String(open));
       }
+    });
+  });
+
+  initScrollToTop();
+}
+
+/**
+ * 4b. Floating Scroll to Top Button
+ */
+function initScrollToTop() {
+  let btn = document.getElementById('scroll-top-btn');
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.id = 'scroll-top-btn';
+    btn.type = 'button';
+    btn.className = 'scroll-top-btn';
+    btn.setAttribute('aria-label', 'Scroll to top');
+    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>';
+    document.body.appendChild(btn);
+  }
+
+  const toggleScrollTopBtn = () => {
+    if (window.scrollY > 280) {
+      btn.classList.add('is-visible');
+    } else {
+      btn.classList.remove('is-visible');
+    }
+  };
+
+  window.addEventListener('scroll', toggleScrollTopBtn, { passive: true });
+  toggleScrollTopBtn();
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   });
 }

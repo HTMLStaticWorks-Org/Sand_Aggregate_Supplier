@@ -1,0 +1,49 @@
+<svg width="240" height="52" viewBox="0 0 240 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hl-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE7B8"/>
+      <stop offset="28%" stop-color="#F3C766"/>
+      <stop offset="68%" stop-color="#C98A2B"/>
+      <stop offset="100%" stop-color="#965D10"/>
+    </linearGradient>
+    <linearGradient id="hl-slate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C5560"/>
+      <stop offset="50%" stop-color="#2D333A"/>
+      <stop offset="100%" stop-color="#191B1E"/>
+    </linearGradient>
+    <linearGradient id="hl-stoneLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#697482"/>
+      <stop offset="100%" stop-color="#3D454F"/>
+    </linearGradient>
+    <linearGradient id="hl-rust" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E87642"/>
+      <stop offset="100%" stop-color="#A54018"/>
+    </linearGradient>
+    <linearGradient id="hl-badgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#212529"/>
+      <stop offset="100%" stop-color="#121416"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Group: Logo Mark -->
+  <g transform="translate(2, 2)">
+    <rect x="0" y="0" width="48" height="48" rx="11" fill="url(#hl-badgeBg)" stroke="url(#hl-gold)" stroke-width="1.8"/>
+    <!-- Peak -->
+    <polygon points="24,8 12,18 24,16.5" fill="url(#hl-stoneLight)"/>
+    <polygon points="24,8 36,18 24,16.5" fill="url(#hl-slate)"/>
+    <polygon points="12,18 9,27 17,25.5 24,16.5" fill="#2E343B"/>
+    <!-- Sand G -->
+    <path d="M9 27 C9 35.5 15 42 24 42 C32.5 42 38 36.5 39 30 H27 V25 H41 C41.5 38 33 44.5 24 44.5 C11.5 44.5 5 36 5 27 L9 27 Z" fill="url(#hl-gold)"/>
+    <!-- Strata -->
+    <path d="M12 32 C14.5 36 19 39 24 39 C29.5 39 34 36 35.5 30.5" stroke="url(#hl-rust)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <path d="M16 34.5 C18.5 36.5 21 37.5 24 37.5 C27 37.5 29.5 36.5 31.5 34.2" stroke="#FCE7B8" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <!-- Stone Gem -->
+    <polygon points="27,21 32.5,17 37,20 31.5,24" fill="#FCE7B8"/>
+    <polygon points="31.5,24 37,20 37,26.5 31.5,30.5" fill="url(#hl-gold)"/>
+    <polygon points="27,21 31.5,24 31.5,30.5 27,27.5" fill="url(#hl-slate)"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="62" y="27" font-family="'Bricolage Grotesque', 'Syne', -apple-system, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.03em" fill="#FBF6EC">GRITLINE</text>
+  <text x="62" y="42" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" letter-spacing="0.18em" fill="#E5A93C">AGGREGATES &amp; SAND</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg class="brand-logo__svg" width="42" height="42" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="gl-goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE7B8"/>
+      <stop offset="28%" stop-color="#F3C766"/>
+      <stop offset="68%" stop-color="#C98A2B"/>
+      <stop offset="100%" stop-color="#965D10"/>
+    </linearGradient>
+    <linearGradient id="gl-slateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4C5560"/>
+      <stop offset="50%" stop-color="#2D333A"/>
+      <stop offset="100%" stop-color="#191B1E"/>
+    </linearGradient>
+    <linearGradient id="gl-stoneLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#697482"/>
+      <stop offset="100%" stop-color="#3D454F"/>
+    </linearGradient>
+    <linearGradient id="gl-rustGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E87642"/>
+      <stop offset="100%" stop-color="#A54018"/>
+    </linearGradient>
+    <linearGradient id="gl-badgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#212529"/>
+      <stop offset="100%" stop-color="#121416"/>
+    </linearGradient>
+    <radialGradient id="gl-amberGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#C98A2B" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#C98A2B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Heavy-Duty Industrial Chamfered Badge -->
+  <rect x="2" y="2" width="60" height="60" rx="13" fill="url(#gl-badgeBg)" stroke="url(#gl-goldGrad)" stroke-width="2"/>
+  <rect x="5" y="5" width="54" height="54" rx="10" fill="url(#gl-amberGlow)"/>
+
+  <!-- Top Chiseled Quarry Peak / Basalt Rock Facets -->
+  <!-- Facet Left (Light) -->
+  <polygon points="32,10 16,23 32,21" fill="url(#gl-stoneLight)"/>
+  <!-- Facet Right (Shadow) -->
+  <polygon points="32,10 48,23 32,21" fill="url(#gl-slateGrad)"/>
+  <!-- Facet Front Left -->
+  <polygon points="16,23 12,35 22,33 32,21" fill="#2E343B"/>
+  
+  <!-- Sweeping Sand Strata Dunes (Golden River & M-Sand) forming the G curved base -->
+  <!-- Main G Body (Gold Gradient) -->
+  <path d="M12 35 C12 46 20 54 32 54 C43 54 50 47 51 39 H36 V32 H54 C54.5 48.5 44 57 32 57 C15.5 57 7 46 7 35 L12 35 Z" fill="url(#gl-goldGrad)"/>
+  
+  <!-- Flowing Sand Sieve Grain Strata (Secondary Accent Lines) -->
+  <path d="M16 41 C19 46.5 25 50 32 50 C39.5 50 45 46 47 39" stroke="url(#gl-rustGrad)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <path d="M21 44.5 C24 47 28 48.2 32 48.2 C36 48.2 39.5 47 42 44" stroke="#FCE7B8" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+
+  <!-- 3D Precision Cubical VSI Aggregate Gem / Stone Core (forms G inward spur) -->
+  <!-- Top Face (Reflective Light) -->
+  <polygon points="36,27 43,22 49,26 42,31" fill="#FCE7B8"/>
+  <!-- Right Face (Rich Ochre) -->
+  <polygon points="42,31 49,26 49,34 42,39" fill="url(#gl-goldGrad)"/>
+  <!-- Left Face (Deep Basalt) -->
+  <polygon points="36,27 42,31 42,39 36,35" fill="url(#gl-slateGrad)"/>
+
+  <!-- Crisp Micro Aggregate Highlight Particle -->
+  <circle cx="18" cy="19" r="1.5" fill="#F3C766"/>
+  <circle cx="46" cy="17" r="1.2" fill="#FCE7B8"/>
+</svg>

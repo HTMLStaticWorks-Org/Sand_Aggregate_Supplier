@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GRITLINE Aggregates — Technical Documentation &amp; Customization Guide</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo/favicon.svg">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/dark-mode.css">
 </head>
@@ -11,7 +12,47 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="../pages/index.html" class="brand-logo">
-        <span class="brand-logo__mark"><i data-lucide="mountain"></i></span>
+        <span class="brand-logo__mark" aria-hidden="true">
+          <svg class="brand-logo__svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="gritlineGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FCE7B8"/>
+                <stop offset="28%" stop-color="#F3C766"/>
+                <stop offset="68%" stop-color="#C98A2B"/>
+                <stop offset="100%" stop-color="#965D10"/>
+              </linearGradient>
+              <linearGradient id="gritlineSlate" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4C5560"/>
+                <stop offset="50%" stop-color="#2D333A"/>
+                <stop offset="100%" stop-color="#191B1E"/>
+              </linearGradient>
+              <linearGradient id="gritlineLightStone" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#697482"/>
+                <stop offset="100%" stop-color="#3D454F"/>
+              </linearGradient>
+              <linearGradient id="gritlineRust" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E87642"/>
+                <stop offset="100%" stop-color="#A54018"/>
+              </linearGradient>
+              <linearGradient id="gritlineBadgeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#212529"/>
+                <stop offset="100%" stop-color="#121416"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="60" height="60" rx="13" fill="url(#gritlineBadgeBg)" stroke="url(#gritlineGold)" stroke-width="2"/>
+            <polygon points="32,10 16,23 32,21" fill="url(#gritlineLightStone)"/>
+            <polygon points="32,10 48,23 32,21" fill="url(#gritlineSlate)"/>
+            <polygon points="16,23 12,35 22,33 32,21" fill="#2E343B"/>
+            <path d="M12 35 C12 46 20 54 32 54 C43 54 50 47 51 39 H36 V32 H54 C54.5 48.5 44 57 32 57 C15.5 57 7 46 7 35 L12 35 Z" fill="url(#gritlineGold)"/>
+            <path d="M16 41 C19 46.5 25 50 32 50 C39.5 50 45 46 47 39" stroke="url(#gritlineRust)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+            <path d="M21 44.5 C24 47 28 48.2 32 48.2 C36 48.2 39.5 47 42 44" stroke="#FCE7B8" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+            <polygon points="36,27 43,22 49,26 42,31" fill="#FCE7B8"/>
+            <polygon points="42,31 49,26 49,34 42,39" fill="url(#gritlineGold)"/>
+            <polygon points="36,27 42,31 42,39 36,35" fill="url(#gritlineSlate)"/>
+            <circle cx="18" cy="19" r="1.5" fill="#F3C766"/>
+            <circle cx="46" cy="17" r="1.2" fill="#FCE7B8"/>
+          </svg>
+        </span>
         <span>GRITLINE <span class="brand-logo__sub">Documentation v1.0</span></span>
       </a>
       <div class="header-actions">

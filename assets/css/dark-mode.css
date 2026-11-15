@@ -4,6 +4,7 @@
    ========================================================================== */
 
 [data-theme="dark"] {
+  color-scheme: dark;
   --bg-primary:      #1B1D1F; /* --slate-900 quarry black */
   --bg-secondary:    #232629; /* deep basalt layer */
   --bg-tertiary:     #2D3236; /* crushed granite dark */
@@ -28,6 +29,10 @@
   --shadow-tilt:     0 28px 64px rgba(0, 0, 0, 0.72);
 }
 
+[data-theme="dark"] .brand-logo__sub {
+  color: var(--ochre);
+}
+
 [data-theme="dark"] .eyebrow {
   color: var(--ochre);
   background: rgba(201, 138, 43, 0.16);
@@ -41,6 +46,42 @@
 
 [data-theme="dark"] .card:hover {
   border-color: var(--ochre);
+}
+
+[data-theme="dark"] .card__badge {
+  background-color: var(--bg-surface-elev);
+  color: var(--sand-200);
+  border-color: var(--border-strong);
+}
+
+[data-theme="dark"] .card__meta .mono-spec {
+  color: var(--ochre);
+  background: rgba(201, 138, 43, 0.14);
+  border-color: rgba(201, 138, 43, 0.35);
+}
+
+[data-theme="dark"] .scroll-top-btn {
+  background: var(--bg-surface);
+  border-color: var(--ochre);
+  color: var(--ochre);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(201, 138, 43, 0.25);
+}
+
+[data-theme="dark"] .scroll-top-btn:hover {
+  background: var(--ochre);
+  color: var(--slate-900);
+}
+
+[data-theme="dark"] .contact-social-bar__links .social-link {
+  background: var(--bg-surface-elev);
+  border-color: var(--border-strong);
+  color: var(--sand-50);
+}
+
+[data-theme="dark"] .contact-social-bar__links .social-link:hover {
+  background: var(--ochre);
+  border-color: var(--ochre);
+  color: var(--slate-900);
 }
 
 [data-theme="dark"] .card__glare {
@@ -80,6 +121,34 @@
   color: var(--stone-500);
 }
 
+/* Date Input & Native Calendar Picker Icon High-Contrast in Dark Theme */
+[data-theme="dark"] .date-input-icon svg,
+html[data-theme="dark"] .date-input-icon svg,
+body[data-theme="dark"] .date-input-icon svg {
+  stroke: #F4A261 !important;
+  filter: drop-shadow(0 0 2px rgba(244, 162, 97, 0.4));
+}
+
+[data-theme="dark"] input[type="date"].form-control,
+[data-theme="dark"] input[type="date"],
+html[data-theme="dark"] input[type="date"] {
+  color-scheme: dark !important;
+}
+
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator,
+html[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer !important;
+  filter: invert(1) brightness(1.3) !important;
+  opacity: 1 !important;
+  transition: opacity var(--transition-fast), filter var(--transition-fast);
+}
+
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator:hover,
+html[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1 !important;
+  filter: invert(0.85) sepia(60%) saturate(500%) hue-rotate(5deg) brightness(1.3) !important;
+}
+
 [data-theme="dark"] .photo-stack__frame {
   border-color: var(--slate-700);
 }
@@ -94,5 +163,21 @@
     background-color: var(--bg-surface);
     border-color: var(--border-subtle);
   }
+}
+
+/* Ensure hero and page-banner text visibility remains crisp and high-contrast in both themes */
+[data-theme="dark"] .page-banner h1,
+[data-theme="light"] .page-banner h1 {
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .page-banner p,
+[data-theme="light"] .page-banner p {
+  color: #F0EAE1 !important;
+}
+
+[data-theme="dark"] .page-banner .breadcrumb span[aria-current],
+[data-theme="light"] .page-banner .breadcrumb span[aria-current] {
+  color: #FFFFFF !important;
 }
 
